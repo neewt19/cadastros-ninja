@@ -11,7 +11,8 @@ public class Main {
             System.out.println("\n===== Menu Ninja =====");
             System.out.println("1. Cadastrar Ninja");
             System.out.println("2. Listar Ninjas");
-            System.out.println("3. Sair");
+            System.out.println("3. Apagar Ninja");
+            System.out.println("4. Sair");
             System.out.print("Escolha uma opção: ");
             String escolha = entrada.nextLine();
             switch (escolha) {
@@ -56,6 +57,22 @@ public class Main {
                     }
                     break;
                 case "3":
+                    System.out.println("Qual ninja quer apagar?");
+                    for (int i = 0; i < quantidadeNinja; i++) {
+                        System.out.println(i + ninjas[i].nome);
+                    }
+                    int ninjaDelete = entrada.nextInt();
+                    entrada.nextLine();
+                    ninjas[ninjaDelete] = null;
+                    for (int i = 0; i < quantidadeNinja; i++) {
+                        if (ninjas[i] == null){
+                            ninjas[i] = ninjas[i+1];
+                            ninjas[i+1] = null;
+                            quantidadeNinja--;
+                        }
+                    }
+                    break;
+                case "4":
                     entrada.close();
                     continuar = false;
                     break;
