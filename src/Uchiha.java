@@ -12,12 +12,7 @@ public class Uchiha extends Ninja {
     }
     @Override
     public void MostrarInformacoes() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Aldeia: " + aldeia);
-        System.out.println("Idade: " + idade);
-        System.out.println("Missao: " + missao);
-        System.out.println("Nivel de dificuldade: " + nivelDificuldade);
-        System.out.println("Status: " + statusMissao);
+        super.MostrarInformacoes();
         System.out.println("Habilidade Especial: "+habilidadeEspecial);
     }
 }

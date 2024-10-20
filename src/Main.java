@@ -36,8 +36,11 @@ public class Main {
                             Uchiha uchiha = new Uchiha(nome, aldeia, idade, missao, dificuldade, status);
                             uchiha.MostrarInformacoes();
                             ninjas[quantidadeNinja] = uchiha;
-                        }
-                        else {
+                        } else if (cla.equalsIgnoreCase("Uzumaki")) {
+                            Uzumaki uzumaki = new Uzumaki(nome, aldeia, idade, missao, dificuldade, status);
+                            uzumaki.MostrarInformacoes();
+                            ninjas[quantidadeNinja] = uzumaki;
+                        } else {
                             Ninja ninja = new Ninja(nome, aldeia, idade, missao, dificuldade, status);
                             ninjas[quantidadeNinja] = ninja;
                         }
@@ -57,7 +60,6 @@ public class Main {
                     continuar = false;
                     break;
             }
-
         }
 
     }
