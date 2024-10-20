@@ -68,9 +68,9 @@ public class Main {
                         if (ninjas[i] == null){
                             ninjas[i] = ninjas[i+1];
                             ninjas[i+1] = null;
-                            quantidadeNinja--;
                         }
                     }
+                    quantidadeNinja--;
                     break;
                 case "4":
                     entrada.close();
