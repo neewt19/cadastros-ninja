@@ -12,7 +12,8 @@ public class Main {
             System.out.println("1. Cadastrar Ninja");
             System.out.println("2. Listar Ninjas");
             System.out.println("3. Apagar Ninja");
-            System.out.println("4. Sair");
+            System.out.println("4. Editar Ninja");
+            System.out.println("5. Sair");
             System.out.print("Escolha uma opção: ");
             String escolha = entrada.nextLine();
             switch (escolha) {
@@ -73,6 +74,50 @@ public class Main {
                     quantidadeNinja--;
                     break;
                 case "4":
+                    System.out.println("Qual ninja quer editar?");
+                    for (int i = 0; i < quantidadeNinja; i++) {
+                        System.out.println(i +". "+ ninjas[i].nome);
+                    }
+                    int editNinja = entrada.nextInt();
+                    entrada.nextLine();
+                    boolean loop = true;
+                    while (loop){
+                        System.out.println("O que voce quer editar no "+ninjas[editNinja].nome);
+                        System.out.println("1. Nome");
+                        System.out.println("2. Idade");
+                        System.out.println("3. Missão");
+                        System.out.println("4. Sair");
+                        String ecolha = entrada.nextLine();
+                        switch (ecolha) {
+                            case "1":
+                                System.out.println("Qual o novo nome do " +ninjas[editNinja].nome);
+                                String newName = entrada.nextLine();
+                                ninjas[editNinja].nome = newName;
+                                break;
+                            case "2":
+                                System.out.println("Qual a nova idade do " +ninjas[editNinja].nome);
+                                int newAge = entrada.nextInt();
+                                entrada.nextLine();
+                                ninjas[editNinja].idade = newAge;
+                                break;
+                            case "3":
+                                System.out.println("Qual a nova missão do " +ninjas[editNinja].nome);
+                                String newMission = entrada.nextLine();
+                                ninjas[editNinja].missao = newMission;
+                                System.out.println("qual o nível de dificuldade da nova missão (S/A/B/C)?");
+                                String dificuldade = entrada.nextLine();
+                                ninjas[editNinja].nivelDificuldade = dificuldade;
+                                System.out.println("Qual o status da missão?");
+                                String status = entrada.nextLine();
+                                ninjas[editNinja].statusMissao = status;
+                                break;
+                            case "4":
+                                loop = false;
+                                break;
+                        }
+                    }
+                    break;
+                case "5":
                     entrada.close();
                     continuar = false;
                     break;
